@@ -12,13 +12,13 @@
         <div class="parent py-3">
             <div class="logo"></div>
             <div class="header d-flex flex-nowrap justify-content-between align-items-center gap-3" style="position: relative;">
-                <div class="flex-fill z-3"><img style="width: 3.3rem; transform: translateY(-1px);" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Hololive_Production_logo.svg/1280px-Hololive_Production_logo.svg.png" alt=""></div>
-                <div class="flex-fill z-3"><img style="width: 3.3rem; transform: translateY(-1px);" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Cover_Corporation_logo.svg/1024px-Cover_Corporation_logo.svg.png" alt=""></div>
-                <div class="flex-fill z-3"><img style="width: 3rem; transform: translateY(1px);" src="https://freepngdesign.com/content/uploads/images/t_p-2807-1-bandai-logo-png-transparent-logo-496246450266.png" alt=""></div>
-                <div class="flex-fill z-3"><img style="width: 3.5rem; transform: translateY(-2px);" src="https://cdn.mobygames.com/logos/18950248-bushiroad-inc.png" alt=""></div>
-                <div class="flex-fill z-3"><img style="width: 3rem; transform: translateY(-1px);" src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Good-Smile-Company.png" alt=""></div>
-                <div class="flex-fill z-3"><img style="width: 3rem;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Furyu_logo.svg/2560px-Furyu_logo.svg.png" alt=""></div>
-                <div class="rounded-pill" style="position: absolute; width: 102%; height: 30px; transform: translateY(2px) translateX(-13px); background-color: white; z-index: 0;"></div>
+                <div class="z-3"><img style="width: 3.3rem; transform: translateY(-1px);" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Hololive_Production_logo.svg/1280px-Hololive_Production_logo.svg.png" alt=""></div>
+                <div class="z-3"><img style="width: 3.3rem; transform: translateY(-1px);" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Cover_Corporation_logo.svg/1024px-Cover_Corporation_logo.svg.png" alt=""></div>
+                <div class="z-3"><img style="width: 3rem; transform: translateY(1px);" src="https://freepngdesign.com/content/uploads/images/t_p-2807-1-bandai-logo-png-transparent-logo-496246450266.png" alt=""></div>
+                <div class="z-3"><img style="width: 3.5rem; transform: translateY(-2px);" src="https://cdn.mobygames.com/logos/18950248-bushiroad-inc.png" alt=""></div>
+                <div class="z-3"><img style="width: 3rem; transform: translateY(-1px);" src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Good-Smile-Company.png" alt=""></div>
+                <div class="z-3"><img style="width: 3rem;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Furyu_logo.svg/2560px-Furyu_logo.svg.png" alt=""></div>
+                <div class="rounded-pill" style="position: absolute; width: 100%; height: 30px; transform: translateY(2px) translateX(-15px); background-color: white; z-index: 0;"></div>
             </div>
             <div class="talent-group-1 d-flex flex-nowrap gap-2">
                 <div class="talent flex-fill" onclick="window.open('https://www.youtube.com/@ShirakamiFubuki')">
@@ -53,6 +53,7 @@
                     <span class="text-white rounded-pill" style="font-size: .8rem; background-color: rgb(0, 0, 0, .6); padding-inline: 1.2rem; padding-block: 0px 3px;">Fan-made By Dinzadin</span>
                 </div>
             </div>
+            <span class="text-white rounded-pill mobile-view" style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); font-size: .8rem; background-color: rgb(0, 0, 0, .6); padding-inline: 1.2rem; width: 60%; max-width: 15rem; min-width: 12rem; text-align: center; padding-block: 0px 3px;">Fan-made By Dinzadin</span>
         </div>
     </div>
 </body>
@@ -64,6 +65,12 @@
 
     body {
         background: linear-gradient(-15deg, rgb(114, 184, 255), rgba(255, 255, 255), rgb(114, 184, 255));
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .mobile-view {
+        display: none;
     }
 
     .parent {
@@ -88,6 +95,7 @@
 
     .header { 
         grid-area: 1 / 2 / 2 / 5; 
+        padding-inline: 15px;
     }
     
     .footer {
@@ -109,7 +117,7 @@
         background-position: 50% 0%;
         background-size: 300%;
         background-repeat: no-repeat;
-        transform: translateY(60px);
+        transform: translateY(55px);
     }
 
     .talent-group-1 > div:last-child {
@@ -124,7 +132,7 @@
         background-position: 45% 0%;
         background-size: 240%;
         background-repeat: no-repeat;
-        transform: translateY(60px);
+        transform: translateY(55px);
     }
 
     .talent-group-2 > div:last-child {
@@ -151,6 +159,87 @@
 
     .talent:hover > div {
         transform: translateY(0);
+    }
+
+    .header img {
+        width: 100% !important;
+        max-width: 3rem;
+    }
+
+    @media (max-width: 480px) {
+        .parent {
+            height: 95vh;
+            max-height: 70rem;
+            width: 40rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: .7fr repeat(6, 1fr);
+            grid-column-gap: 8px;
+            /* grid-row-gap: 10px; */
+        }
+        .logo { 
+            background-image: url('https://static.miraheze.org/hololivewiki/2/20/Logo_-_hololive_GAMERS.png');
+            background-position: center;
+            background-size: 60%;
+            background-repeat: no-repeat;
+            grid-area: 6 / 2 / 8 / 4;
+        }
+
+        .header { 
+            grid-area: 1 / 1 / 1 / 5; 
+        }
+        
+        .footer {
+            display: none;
+            grid-area: 7 / 3 / 7 / 5; 
+        }
+        
+        .talent-group-1 { 
+            padding-top: 0px;
+            grid-area: 2 / 1 / 6 / 3; 
+        }
+        
+        .talent-group-2 { 
+            padding-top: 0px;
+            grid-area: 2 / 3 / 6 / 5;
+        }
+
+        .header img {
+            width: 100% !important;
+            max-width: 2rem;
+        }
+
+        .mobile-view {
+            display: block;
+        }
+
+        .talent-group-1 > div:first-child {
+            transform: translateY(0);
+        }
+
+        .talent-group-2 > div:first-child {
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-aspect-ratio: 3/6) {
+        .logo { 
+            background-image: url('https://static.miraheze.org/hololivewiki/2/20/Logo_-_hololive_GAMERS.png');
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            grid-area: 5 / 2 / 8 / 4;
+        }
+
+        .talent-group-1 { 
+            padding-top: 0px;
+            grid-area: 2 / 1 / 5 / 3; 
+        }
+        
+        .talent-group-2 { 
+            padding-top: 0px;
+            grid-area: 2 / 3 / 5 / 5;
+        }
     }
 </style>
 </html>
